@@ -8,10 +8,11 @@ window.onload = function() {
             let originalData = new FormData(form);
             let data = {
                 "FIELDS":{
-                    "TITLE":"styazhka",
+                    "TITLE":"Заявка с сайта " + document.location.hostname,
                     "HAS_PHONE": true,
                     "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
-                    "UTM_SOURCE":window.location.href
+                    "UTM_SOURCE":window.location.href,
+                    "SOURCE_ID": "WEB"
                 }
             };
             
@@ -41,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function(){
             form.addEventListener('submit', function(e) {
                 e.preventDefault(); 
 
+
+
                 let names = ['ЧАСТНЫЕ ДОМА И КОТТЕДЖИ', 'ГОРОДСКИЕ КВАРТИРЫ', 'КОММЕРЧЕСКИЕ ПОМЕЩЕНИЯ', 'ПЛОЩАДИ БОЛЕЕ 500 М2'];
                 let data = {};
                 let originalData = new FormData(form);
@@ -51,11 +54,12 @@ document.addEventListener('DOMContentLoaded', function(){
                     
                     data = {
                         "FIELDS":{
-                            "TITLE":"styazhka",
+                            "TITLE":"Заявка с сайта " +document.location.hostname,
                             "HAS_PHONE": true,
                             "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
-                            "UTM_SOURCE":window.location.href,
-                            "UF_CRM_1706714277112": square
+                            "COMMENTS": "Площадь "+square + " м2.",
+                            "UTM_SOURCE": window.location.href,
+                            "SOURCE_ID": "WEB"
                         }
                     };
                     
@@ -69,25 +73,18 @@ document.addEventListener('DOMContentLoaded', function(){
                     })
                 } else if (form.getAttribute('name') === 'БЕСПЛАТНЫЙ РАСЧЕТ СТОИМОСТИ') {
                     let room = form.elements['form_fields[name]'].value;
-                    let roomCodes = {
-                        "Квартира": "133",
-                        "Дом/Дача": "135",
-                        "Коммерческое помещение": "137",
-                        "Склад/паркинг": "139"
-                    };
-                    let roomData = roomCodes[room] || "133";
 
                     let sound = form.elements['form_fields[field_22658db]'].checked;
                     let soundData = "";
-                    sound?soundData="141":soundData="143";
+                    sound?soundData="доп. звукоизоляция есть":soundData="доп. звукоизоляции нет";
 
                     let water = form.elements['form_fields[field_32263b4]'].checked;
                     let waterData = "";
-                    water?waterData="145":waterData="147";
+                    water?waterData="доп. гидроизоляция есть":waterData="доп. гидроизоляции нет";
 
                     let temprature = form.elements['form_fields[field_3eb4006]'].checked;
                     let tempratureData = "";
-                    temprature?tempratureData="149":tempratureData="151";
+                    temprature?tempratureData="доп. теплоизоляция есть":tempratureData="доп. теплоизоляции нет";
 
                     let floor = form.elements['form_fields[email]'].value;
                     let square = form.elements['form_fields[message]'].value;
@@ -97,17 +94,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     data = {
                         "FIELDS":{
-                            "TITLE":"styazhka",
+                            "TITLE":"Заявка с сайта " +document.location.hostname,
                             "HAS_PHONE": true,
                             "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
+                            "COMMENTS":"Этаж " + floor + ", тип помещения " + room + ", площадь "+square+" м2, " +
+                            soundData + ", " + waterData + ", " + tempratureData + ", адрес " + address + ".",
                             "UTM_SOURCE":window.location.href,
-                            "UF_CRM_1706714277112": square,
-                            "UF_CRM_1706714831069": roomData,
-                            "UF_CRM_1706715535112": floor,
-                            "UF_CRM_1706715607221": soundData,
-                            "UF_CRM_1706715694976": waterData,
-                            "UF_CRM_1706715769070": tempratureData,
-                            "UF_CRM_1706715819770": address
+                            "SOURCE_ID": "WEB"
                         }
                     };
 
@@ -126,11 +119,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     data = {
                         "FIELDS":{
-                            "TITLE":"styazhka",
+                            "TITLE":"Заявка с сайта " +document.location.hostname,
                             "HAS_PHONE": true,
                             "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
+                            "COMMENTS": "Площадь "+square + " м2.",
                             "UTM_SOURCE":window.location.href,
-                            "UF_CRM_1706714277112": square
+                            "SOURCE_ID": "WEB"
                         }
                     };
                     
