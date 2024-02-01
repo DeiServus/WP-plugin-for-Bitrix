@@ -9,7 +9,9 @@ window.onload = function() {
             let data = {
                 "FIELDS":{
                     "TITLE":"styazhka",
-                    "UF_CRM_1706712641364": phone
+                    "HAS_PHONE": true,
+                    "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
+                    "UTM_SOURCE":window.location.href
                 }
             };
             
@@ -50,7 +52,9 @@ document.addEventListener('DOMContentLoaded', function(){
                     data = {
                         "FIELDS":{
                             "TITLE":"styazhka",
-                            "UF_CRM_1706712641364": phone,
+                            "HAS_PHONE": true,
+                            "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
+                            "UTM_SOURCE":window.location.href,
                             "UF_CRM_1706714277112": square
                         }
                     };
@@ -94,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function(){
                     data = {
                         "FIELDS":{
                             "TITLE":"styazhka",
-                            "UF_CRM_1706712641364": phone,
+                            "HAS_PHONE": true,
+                            "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
+                            "UTM_SOURCE":window.location.href,
                             "UF_CRM_1706714277112": square,
                             "UF_CRM_1706714831069": roomData,
                             "UF_CRM_1706715535112": floor,
@@ -121,7 +127,9 @@ document.addEventListener('DOMContentLoaded', function(){
                     data = {
                         "FIELDS":{
                             "TITLE":"styazhka",
-                            "UF_CRM_1706712641364": phone,
+                            "HAS_PHONE": true,
+                            "PHONE":[ { "VALUE": phone, "VALUE_TYPE": "WORK" } ],
+                            "UTM_SOURCE":window.location.href,
                             "UF_CRM_1706714277112": square
                         }
                     };
